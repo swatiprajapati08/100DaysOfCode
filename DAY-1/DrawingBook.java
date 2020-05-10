@@ -1,4 +1,5 @@
-//
+//Drawing Book
+//EASY
 import java.util.*;
 class Solution
 {
