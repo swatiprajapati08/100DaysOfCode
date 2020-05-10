@@ -1,0 +1,22 @@
+//Cats and a Mouse
+
+//Easy
+
+class Solution
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+int t=sc.nextInt();
+while(t-->0)
+{
+int x=sc.nextInt();
+int y=sc.nextInt();
+int z=sc.nextInt();
+System.out.println(catAndMouse(x,y,z));
+}
+}
+ static String catAndMouse(int x, int y, int z) {
+        return (Math.abs(x - z) < Math.abs(y - z)) ? "Cat A" : (Math.abs(x - z) > Math.abs(y - z)) ? "Cat B" : "Mouse C";
+    }
+}
