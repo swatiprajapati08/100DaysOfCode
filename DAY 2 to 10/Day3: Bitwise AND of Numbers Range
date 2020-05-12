@@ -1,0 +1,12 @@
+//201. Bitwise AND of Numbers Range
+
+
+//Bitwise-AND of any two numbers will always produce a number less than or equal to the smaller number.
+
+class Solution {
+    public int rangeBitwiseAnd(int m, int n) {
+        while(n>m)
+            n=n&n-1;
+        return m&n;
+    }
+}
