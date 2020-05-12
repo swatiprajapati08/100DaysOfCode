@@ -1,2 +1,15 @@
 //Cutting Paper Squares
 
+
+import java.util.*;
+public class Solution {
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        long n=sc.nextLong();
+        long m=sc.nextLong();
+       System.out.println((n*m)-1);
+    }
+}
