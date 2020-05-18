@@ -24,4 +24,4 @@
 
 
 [1.1]: http://i.imgur.com/tXSoThF.png
-[1]: https://twitter.com/sassy_code
+[1]: https://twitter.com/sassy_coder
