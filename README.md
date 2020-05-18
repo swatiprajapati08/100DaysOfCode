@@ -7,7 +7,7 @@
 ***
 
 
- **Follow My Journey :  [Twitter Link](https://twitter.com/sassy_coder)**
+ **Follow My Journey :** [![alt text][1.1]][1]
 
  **LinkedIn          :  [LinkedIn ](linkedin.com/in/swati-prajapati-008/)**
 
@@ -20,3 +20,8 @@
 
 
 ![100daysofCode](https://blog.hyperiondev.com/wp-content/uploads/2018/11/Blog-100DaysOfCode.jpg)
+
+
+
+[1.1]: http://i.imgur.com/tXSoThF.png
+[1]: https://twitter.com/sassy_code
