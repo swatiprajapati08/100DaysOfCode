@@ -1,0 +1,26 @@
+//
+
+class LongestSubsequence{
+    
+    // function to find longest increasing subsequence
+    long longestSubsequence(int n, int arr[]){
+        
+        
+    int LIS[]=new int[n];
+    Arrays.fill(LIS,1);
+   
+    for(int i=1;i<n;i++)
+    {
+        for(int j=0;j<i;j++)
+        {
+            if(arr[i]>arr[j] && LIS[i]<LIS[j]+1)
+            LIS[i]=LIS[j]+1;
+        }
+    }
+    long max=Long.MIN_VALUE;
+    for(int i=0;i<n;i++)
+    max=Math.max(max,LIS[i]);
+    return max;
+    }
+    
+}
