@@ -1,0 +1,32 @@
+//Kadane's Algorithm
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)throws IOException
+	 {
+	   BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	   int t=Integer.parseInt(br.readLine());
+	 while(t-->0)
+	 {
+	     int n=Integer.parseInt(br.readLine());
+	     int arr[]=new int[n];
+	     String line=br.readLine();
+	     StringTokenizer st=new StringTokenizer(line," ");
+	     for(int i=0;i<n;i++)
+	     arr[i]=Integer.parseInt(st.nextToken());
+	     
+	     
+	     int local_max=0,global=Integer.MIN_VALUE;
+	     
+	     for(int i=0;i<n;i++)
+	     {
+	         local_max=Math.max(arr[i],arr[i]+local_max);
+	         global=Math.max(global,local_max);
+	     }
+	     System.out.println(global);
+	 }
+	 }
+}
