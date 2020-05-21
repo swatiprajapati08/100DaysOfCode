@@ -1,0 +1,23 @@
+//level order traversal binary tree
+
+
+void levelOrderTraversal(Node node) {
+
+    if(node==null)
+    return;
+    
+    Queue<Node> q=new LinkedList<>();
+     q.add(node);
+     
+     while(!q.isEmpty())
+     {
+       Node n=q.poll();
+       System.out.print(n.value+" ");
+      
+       if(n.left!=null)
+       q.add(n.left);
+       
+       if(n.right!=null)
+       q.add(n.right);
+     }
+}
