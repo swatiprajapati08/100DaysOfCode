@@ -1,0 +1,38 @@
+//Diameter of Binary Tree
+
+class Tree {
+    /* Complete the function to get diameter of a binary tree */
+    int diameter(Node node) {
+     Pair<Integer,Integer> p=HeightDia(node);
+     return p.diametr;
+    }
+    static Pair<Integer,Integer> HeightDia(Node node)
+    {
+        if(node==null)
+        {
+            Pair<Integer,Integer> out=new Pair<>();
+            out.height=0;
+            out.diametr=0;
+            return out;
+        }
+        Pair<Integer,Integer> l= HeightDia(node.left);
+        Pair<Integer,Integer> r= HeightDia(node.right);
+        
+        int h=1+Math.max(l.height,r.height);
+        int op1=l.height+r.height+1;
+        int op2=l.diametr;
+        int op3=r.diametr;
+         Pair<Integer,Integer> out=new Pair<>();
+         out.height=h;
+         out.diametr=Math.max(op1,Math.max(op2,op3));
+        return out;
+    }
+    
+    
+    
+}
+class Pair<T,V>
+{
+    T height;
+    V diametr;
+}
