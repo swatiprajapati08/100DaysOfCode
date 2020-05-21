@@ -1,0 +1,53 @@
+//Subarray with given sum
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)throws IOException
+	 {
+
+	   BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	   int t=Integer.parseInt(br.readLine());
+	     while(t-->0)
+	    {
+	         String line2=br.readLine();
+	     StringTokenizer st2=new StringTokenizer(line2," ");
+	     int n=Integer.parseInt(st2.nextToken());
+	     int k=Integer.parseInt(st2.nextToken());
+	     long arr[]=new long[n];
+	     String line=br.readLine();
+	     StringTokenizer st=new StringTokenizer(line," ");
+	     
+	     for(int i=0;i<n;i++)
+	     arr[i]=Long.parseLong(st.nextToken());
+	   
+	      subarray(arr,n,k);
+	     
+	    }
+	 }  
+	     static void subarray(long arr[],int n,int k)
+	     {
+	          long sum=arr[0];int start=0;
+	     
+	     for(int i=1;i<=n;i++)
+	     {
+	         while(sum>k && start<i-1)
+	         {
+	             sum-=arr[start];
+	             start++;
+	         }
+	         if(sum==k)
+	         {
+	             System.out.println((start+1)+" "+i);
+	             return ;
+	         }
+	         if(i<n)
+	         sum+=arr[i];
+	     }
+	     System.out.println("-1");
+	     return;
+	     }	     
+}
