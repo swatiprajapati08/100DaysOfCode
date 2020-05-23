@@ -1,0 +1,19 @@
+//Detect the loop using floyd algorithm
+
+
+class Solution {
+    public int detectLoop(Node head) {
+       
+       Node slow=head,fast=head;
+       
+       while(slow!=null && fast!=null && fast.next!=null)
+       {
+           slow=slow.next;
+           fast=fast.next.next;
+           
+           if(slow==fast)
+           return 1;  //loop is detected
+       }
+       return 0; //loop is not detected.
+    }
+}
