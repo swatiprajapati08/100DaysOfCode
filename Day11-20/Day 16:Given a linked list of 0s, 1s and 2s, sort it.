@@ -1,0 +1,38 @@
+//Given a linked list of 0s, 1s and 2s, sort it.
+
+
+class LinkedList
+{
+    static Node segregate(Node head)
+    {
+        int n0 = 0, n1 = 0, n2 = 0;
+        Node ptr=head;
+        while(ptr!=null)
+        {
+            if(ptr.data==0)
+            n0++;
+            else if(ptr.data==1)
+            n1++;
+            else
+            n2++;
+            ptr=ptr.next;
+        }
+        ptr=head;
+        while(n0-->0)
+        {
+            ptr.data=0;
+            ptr=ptr.next;
+        }
+        while(n1-->0)
+        {
+            ptr.data=1;
+            ptr=ptr.next;
+        }
+        while(n2-->0)
+        {
+            ptr.data=2;
+            ptr=ptr.next;
+        }
+        return head;
+    }
+}
