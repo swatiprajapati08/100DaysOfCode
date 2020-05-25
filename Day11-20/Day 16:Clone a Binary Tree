@@ -1,0 +1,24 @@
+//Clone a Binary Tree
+
+class GfG{
+    public static Tree cloneTree(Tree tree){
+        if(tree==null)return tree;
+        Tree clone=new Tree(tree.data);
+       
+        return MT(tree,clone);
+     }
+     static Tree MT(Tree t,Tree C)
+     {
+         if(t.left!=null)
+         {
+             C.left=new Tree(t.left.data);
+             MT(t.left,C.left);
+         }
+         if(t.right!=null)
+        {
+         C.right=new Tree(t.right.data);
+         MT(t.right,C.right);
+        }
+        return C;
+    }
+}
