@@ -1,0 +1,20 @@
+//Minimum Cost of ropes
+//https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1/?track=SPC-Heap&batchId=155
+
+class solve {
+
+    void minCost(long arr[], int n) {
+        PriorityQueue<Long> map=new PriorityQueue<>();
+        for(long i:arr)
+        map.add(i);
+        long sum=0;
+        while(map.size()!=1)
+        {
+            long a=map.poll();
+            long b=map.poll();
+            sum+=a+b;
+            map.add((a+b));
+        }
+        System.out.println(sum);
+    }
+}
