@@ -1,0 +1,65 @@
+//Palindromic patitioning
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	 Scanner sc=new Scanner(System.in);
+	 int t=sc.nextInt();
+	 while(t-->0)
+	 {
+	     String n=sc.next();
+	     int dp[][]=new int[1001][1001];
+	     for(int[] row:dp)
+	     Arrays.fill(row,-1);
+	     
+	     System.out.println(PP(n,dp,0,n.length()-1));
+	 }
+	 }
+	 public static boolean isPalindrome(String s, int i, int j) {
+        while (i < j) {
+        if (s.charAt(i) != s.charAt(j))
+        return false;
+        i++;
+        j--;
+    }
+return true;
+}
+
+static int PP(String s,int dp[][],int i,int j)
+{
+    if(i>=j)
+    return 0;
+    if(isPalindrome(s,i,j)==true)
+    return 0;
+    if(dp[i][j]!=-1)
+    return dp[i][j];
+    int left,right,min=Integer.MAX_VALUE;
+    for(int k=i;k<j;k++)
+    {
+        if(dp[i][k]!=-1)
+        left=dp[i][k];
+        else
+        {
+            left=PP(s,dp,i,k);
+            dp[i][k]=left;
+        }
+        if(dp[k+1][j]!=-1)
+        right=dp[k+1][j];
+        else
+        {
+            right=PP(s,dp,k+1,j);
+            dp[k+1][j]=right;
+        }
+        
+        int temp=1+left+right;
+        
+        min=Math.min(temp,min);
+        
+    }
+    return min;
+}
+}
