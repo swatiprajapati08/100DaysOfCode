@@ -1,0 +1,19 @@
+//Possible paths between 2 vertices
+
+
+class Path {
+    static int countPaths(ArrayList<ArrayList<Integer>> g, int s, int d) {
+       return dfs(g,s,d,0);
+    }
+    static int dfs(ArrayList<ArrayList<Integer>> g, int s,int d,int count)
+    {
+        if(s==d)
+        {
+            count++;
+            return count;
+        }
+        for(int i: g.get(s))
+            count=dfs(g,i,d,count);
+        return count;
+    }
+}
