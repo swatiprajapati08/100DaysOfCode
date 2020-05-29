@@ -1,0 +1,33 @@
+//Level of Nodes
+
+class Level_of_Nodes
+{
+    
+    static int levels(ArrayList<ArrayList<Integer>> list, int x, int in)
+    {
+        if(x>in)
+        return -1;
+       int level[]=new int[list.size()];
+       boolean visited[]=new boolean[list.size()];
+       Queue<Integer> q=new LinkedList<Integer>();
+       q.add(x);
+        visited[x]=true;
+         level[x]=0;
+       
+       while(!q.isEmpty())
+       {
+           int u=q.poll();
+          
+           for(int i:list.get(u))
+           {
+               if(!visited[i])
+               {
+                   q.add(i);
+                   level[i]=level[u]+1;
+                   visited[i]=true;
+               }
+           }
+       }
+       return level[in];
+    }
+}
