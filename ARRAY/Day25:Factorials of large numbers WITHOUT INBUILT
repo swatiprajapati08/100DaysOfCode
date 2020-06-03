@@ -1,5 +1,6 @@
 //Factorials of large numbers
-
+// 123*124 multiply like 3*124+2*124+1*124
+//storing the index in reverse order 123 number store in array 3-2-1
 
 iimport java.util.*;
 import java.math.*;
