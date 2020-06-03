@@ -1,0 +1,60 @@
+//Stock buy and sell
+
+/*Example
+Input:
+3
+7
+100 180 260 310 40 535 695
+4
+100 50 30 20
+10
+23 13 25 29 33 19 34 45 65 67
+
+Output:
+(0 3) (4 6)
+No Profit
+(1 4) (5 9)  */
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)
+	 {
+	 Scanner sc=new Scanner(System.in);
+	 int t=sc.nextInt();
+	 while(t-->0)
+	 {
+	     int n=sc.nextInt();
+	     int arr[]=new int[n];
+	     for(int i=0;i<n;i++)
+	     arr[i]=sc.nextInt();
+	     
+	     int c=0;
+	     
+	     for(int i=1;i<n;i++)
+	     {
+	         if(arr[i-1]<arr[i])
+	         {
+	         System.out.print("("+(i-1)+" ");
+	         i++;
+	         while(i<n)
+	         {
+	             if(arr[i-1]<arr[i])
+	             i++;
+	             else
+	             break;
+	         }
+	         System.out.print((i-1)+") ");
+	         c++;
+	         }
+	     }
+	     if(c==0)
+	     System.out.print("No Profit");
+	     
+	     System.out.println();
+	 }
+	 }
+}
