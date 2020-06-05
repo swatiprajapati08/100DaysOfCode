@@ -1,0 +1,30 @@
+//Game of Death in a circle
+
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class GFG
+ {
+	public static void main (String[] args)throws IOException
+	 {
+	 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+	 int t=Integer.parseInt(br.readLine());
+	 while(t-->0)
+	 {
+	     String str[]=br.readLine().split(" ");
+	     int n=Integer.parseInt(str[0]);
+	     int k=Integer.parseInt(str[1]);
+	     
+	     System.out.println(jos(n,k));
+	     
+	 }
+	 }
+	 static int jos(int n,int k)
+	 {
+	     if(n==1)
+	     return 1;
+	     else
+	     return (jos(n-1,k)+(k-1))%n+1;//because starting index is 1 not zero jos(n-1,k)+(k))%n;
+	 }
+}
