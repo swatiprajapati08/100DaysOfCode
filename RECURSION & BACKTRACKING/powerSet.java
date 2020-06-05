@@ -1,6 +1,6 @@
 //Power Set Using Recursion
 //https://practice.geeksforgeeks.org/problems/power-set-using-recursion/1/?track=SPCF-Recursion&batchId=155
-
+//date 5 june
 class LexSort
 {
     // complete the function
