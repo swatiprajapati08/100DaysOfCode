@@ -1,6 +1,16 @@
 //Largest Number formed from an Array
 
 //https://practice.geeksforgeeks.org/problems/largest-number-formed-from-an-array/0/?track=SPCF-Hashing&batchId=155
+/*Input:
+2
+5
+3 30 34 5 9
+4
+54 546 548 60
+
+Output:
+9534330
+6054854654*/
 
 
 import java.util.*;
