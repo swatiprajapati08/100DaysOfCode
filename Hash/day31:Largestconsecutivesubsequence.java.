@@ -1,0 +1,27 @@
+//https://practice.geeksforgeeks.org/problems/longest-consecutive-subsequence2449/1/?track=SPCF-Hashing&batchId=155
+
+// Longest consecutive subsequence
+
+	static int findLongestConseqSubseq(int arr[], int N)
+	{
+	   TreeSet<Integer> hs=new TreeSet<>();
+	   for(int i:arr)
+	   hs.add(i);
+	   int count=0,max=-1;
+	   
+	   Iterator it = hs.iterator();
+        while (it.hasNext()) {
+            
+        int curr = (int) it.next() + 1;
+        
+	       if(hs.contains(curr))
+	        count++;
+	        
+	       else
+	       {
+	           max=Math.max(count,max);
+	           count=0;
+            }
+	   }
+	   return max+1;
+	}
