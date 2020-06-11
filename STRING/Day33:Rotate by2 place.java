@@ -1,7 +1,14 @@
 //https://practice.geeksforgeeks.org/problems/check-if-string-is-rotated-by-two-places-1587115620/1/?track=SPC-Strings&batchId=155
 //Check if string is rotated by two places
 
-if(s1.length()!=s2.length() || (s1.length()<=2 && !s1.equals(s2)))
+class Rotation{
+    
+    /*  Function to check if two strings are rotated
+    *   s1, s2: input strings
+    */
+    public static boolean isRotated(String s1, String s2){
+        
+       if(s1.length()!=s2.length() || (s1.length()<=2 && !s1.equals(s2)))
 {
 return false;
 }
@@ -22,3 +29,6 @@ if(res.equals(s2))
 return true;
 
 return false;
+    }
+    
+}
