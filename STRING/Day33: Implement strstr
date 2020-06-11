@@ -1,0 +1,11 @@
+//https://practice.geeksforgeeks.org/problems/implement-strstr/1/?track=SPC-Strings&batchId=155
+
+//Implement strstr
+
+class GfG
+{
+    int strstr(String str, String target)
+    {
+       return str.indexOf(target);
+    }
+}
