@@ -1,0 +1,25 @@
+//https://practice.geeksforgeeks.org/problems/count-element-occurences/1
+
+
+class CountElement {
+
+    // Function to find element with count more than n/k times
+    // arr: input array
+    public int countOccurence(int[] arr, int n, int k) {
+      int max=-1;
+      for(int i:arr)
+      max=Math.max(max,i);
+      
+      
+     int freq[]=new int[max+1];
+     for(int j:arr)
+     freq[j]++;
+     int count=0;
+     for(int i=0;i<=max;i++)
+     {
+         if(freq[i]>(int)n/k)
+         count++;
+     }
+     return count;
+    }
+}
