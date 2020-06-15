@@ -15,7 +15,10 @@ class Traversal {
            for(int i: g.get(temp))
            {
                if(!visited[i])
-               q.add(i);
+               {
+                visited[i]=true;   
+                q.add(i);
+               }
            }
        }
     return res;
