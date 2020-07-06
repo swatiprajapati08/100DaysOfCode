@@ -1,0 +1,33 @@
+/*Given a number N, find all prime numbers upto N ( N included ).
+
+Example:
+
+if N = 7,
+
+all primes till 7 = {2, 3, 5, 7}
+
+Make sure the returned array is sorted.
+*/
+
+public class Solution {
+    public ArrayList<Integer> sieve(int A) {
+        boolean b[]=new boolean[A+1];
+        b[0]=true;
+        b[1]=false;
+        for(int i=2;i*i<=A;i++)
+        {
+            if(b[i]!=true)
+            {
+                for(int j=i*i;j<=A;j+=i)
+                b[j]=true;
+            }
+        }
+        ArrayList<Integer> arr=new ArrayList<>();
+        for(int i=2;i<=A;i++)
+        {
+            if(b[i]==false)
+            arr.add(i);
+        }
+        return arr;
+    }
+}
